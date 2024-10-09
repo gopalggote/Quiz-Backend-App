@@ -3,7 +3,7 @@
 ## Overview
 
 This is a Quiz Application built with Node.js and Express. It allows users to create quizzes, answer questions, and track their progress. 
-The application supports multiple-choice questions and provides feedback on user answers. 
+The application supports single-choice question and provides feedback on user answer. 
 
 ## Features
 
