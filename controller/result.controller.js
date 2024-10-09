@@ -67,13 +67,17 @@ exports.getResults = (req, res) => {
     try {
         const { quizId, userId } = req.params;
         // Fetch results based on quizId and userId
-        const results = localStorageService.getResultsByQuizId(quizId, userId);
-        
+        let results = localStorageService.getResultsByQuizId(quizId, userId);
+        results = results[0];
+        console.log("result.controller.js :: getResults() :: results: quizId, userId",results.quizId, results.userId);
         // If no results are found, return an appropriate message
         if (!results || results.length === 0) {
             return res.status(200).json({ statusCode: 200, message: 'No results found' });
         }
-
+        //fetch question count to select mark
+        const questionCount = localStorageService.getQuizById(quizId);
+        console.log("result.controller.js :: getResults() :: questionCount: ",questionCount.questions.length);
+        results['totalMark'] = questionCount.questions.length;
         // Return the fetched results
         res.status(200).json({statusCode: 200, message: 'Data fetch successfully', data: results});
     } catch (error) {

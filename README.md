@@ -43,3 +43,9 @@ The application supports multiple-choice questions and provides feedback on user
    http://localhost:3000
 5. Check the swagger ui on browser
     http://localhost:3000/api-docs/
+
+
+### Consideration
+1. In this application I consiser user is already create and there primary id is '123', primary is is dynamic
+2. I consider 1 mark for 1 answer and total marks are depend on question count
+3. No negative marking

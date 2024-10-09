@@ -116,6 +116,7 @@ exports.getQuizList = (req, res) => {
  *       500:
  *         description: Internal server error.
  */
+// Method to get quiz by id
 exports.getQuiz = (req, res) => {
     try {
         const { id } = req.params;
